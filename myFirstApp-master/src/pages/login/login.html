@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>@WAVES</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+  <form [formGroup]="myForm" (ngSubmit)="loginUser()" >
+    <ion-list no-lines>
+      <ion-item text-center>
+          <ion-img width="auto" height="auto" src="assets/wave.png" ></ion-img>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="person" item-left></ion-icon>
+        <ion-label stacked>Email:</ion-label>
+        <ion-input formControlName="email" type="text" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="key" item-left></ion-icon>
+        <ion-label stacked>Password:</ion-label>
+        <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div>
+      <button ion-button block type="submit" [disabled]="!myForm.valid">Log in</button>
+    </div>
+  </form>
+  <div text-center>
+    <a ion-button block clear (click)="goToSignup()">
+      Create an account
+    </a>
+    <a ion-button block clear (click)="goToResetPassword()">
+      Forgot password
+    </a>
+  </div>
+</ion-content>
